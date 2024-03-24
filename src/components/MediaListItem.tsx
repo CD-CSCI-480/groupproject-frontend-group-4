@@ -9,6 +9,7 @@ const MediaListItem = ({media}:MediaListItemProps)=> {
         <View style={stlyes.container}>
             <Image source={{uri:media.image}} style={stlyes.image}/>
             <Text style={stlyes.title} numberOfLines={1} ellipsizeMode="tail">{media.title} </Text>
+            <Text style={stlyes.ratingText}>{media.rating}</Text>
         </View>
     )
 }
@@ -26,13 +27,17 @@ const stlyes = StyleSheet.create({
     },
     title : {
         fontSize: 12,
-        fontWeight: '600',
+        fontWeight: 'bold',
         marginVertical: 10,
         color:"white",
         flex:1,
         width:100
-        
-        
+    },
+    ratingText :{
+        alignItems:"center",
+        color:"white",
+        fontWeight:"bold"
+
 
     }
  })
