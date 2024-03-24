@@ -1,6 +1,5 @@
 import React from 'react'
 import { View,StyleSheet,FlatList,Text,SectionList } from 'react-native'
-import MediaArray from '../../assets/data/dummy_data'
 import HomeScreenButton from '../components/HomeScreenButton'
 import MediaListItem from '../components/MediaListItem'
 import SECTIONS from '../../assets/data/sections'
@@ -12,9 +11,6 @@ const HomePage = ()=> {
             <HomeScreenButton></HomeScreenButton>
             <SectionList
             sections = {SECTIONS}
-            style={styles.headerContainer}
-            
-
             renderSectionHeader= {
                 ({section}) => (
                     <>
@@ -30,6 +26,7 @@ const HomePage = ()=> {
                 )
             }
             renderItem= {({item,section})=>{
+                return null;
             }}
             />
         </View>
@@ -38,23 +35,20 @@ const HomePage = ()=> {
 }
 
 
+
+
 const styles = StyleSheet.create({
     container : {
         flex:1,
         backgroundColor:"grey"
     },
-
     headerText : {
         color:"white",
         fontSize:30,
         fontWeight:"bold",
-        
-    
+        margin:10
     },
-    headerContainer : {
-        margin:20,
 
-    }
 })
 
 
