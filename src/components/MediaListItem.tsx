@@ -1,8 +1,10 @@
 import { Text, View,StyleSheet,Image } from 'react-native';
-import MediaArray from '../../assets/data/dummy_data'
+import { Media } from '../types';
+type MediaListItemProps = {
+    media:Media
+}
 
-const media = MediaArray[0];
-const MediaListItem = ()=> {
+const MediaListItem = ({media}:MediaListItemProps)=> {
     return (
         <View style={stlyes.container}>
             <Image source={{uri:media.image}} style={stlyes.image}/>
@@ -13,19 +15,16 @@ const MediaListItem = ()=> {
 
 const stlyes = StyleSheet.create({
     container: {
-        flex:1,
-        backgroundColor: 'grey',
         alignItems:'center',
-        
-
     },
     image: {
-        width:100,
-        height:200,
-        borderRadius: 4,
+        width:115,
+        aspectRatio: 137/220,
+        borderRadius: 20,
+        
     },
     title : {
-        fontSize: 18,
+        fontSize: 12,
         fontWeight: '600',
         marginVertical: 10,
         color:"white"

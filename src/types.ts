@@ -1,6 +1,8 @@
-export type Media = {
+export type Media =  {
     id:number,
     image: string|null,
     title:string,
 
 }
+
+

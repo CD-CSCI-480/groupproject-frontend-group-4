@@ -7,12 +7,14 @@ const HomeScreenButton = () => {
     return (
         <View style={styles.container}>
             {mediaTypes.map((mediaType)=>(
-            <View
+            <Pressable
+            onPress={()=>{setSelectedType(mediaType)
+            }}
              key={mediaType} style={[styles.sizes,{backgroundColor: selectedType==mediaType?"#EE731B":"#2F2F2F"}]}>
                 <Text style={styles.size}>
                     {mediaType}
                 </Text>
-            </View>
+            </Pressable>
             ))}
         </View>
     )
@@ -27,7 +29,6 @@ const styles = StyleSheet.create({
     },
 
     sizes: {
-        backgroundColor:"#2F2F2F",
         borderRadius: 10,
         aspectRatio:3,
         alignItems:"center",

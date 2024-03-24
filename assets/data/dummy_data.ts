@@ -1,15 +1,44 @@
 import { Media } from "../../src/types";
 const MediaArray: Media[] = [
-    { id: 0, title: "The Shawshank Redemption", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/shawshank poster.jpeg" },
-    { id: 1, title: "The Godfather", image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FM%2FMV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM%40._V1_FMjpg_UX1000_.jpg&tbnid=SSjinMZCq1jHrM&vet=12ahUKEwjqquXH-oGFAxViFmIAHcnKDV4QMygAegQIARB1..i&imgrefurl=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0068646%2F&docid=gO0WSy4Pg0U67M&w=1000&h=1420&q=The%20god%20father%20&ved=2ahUKEwjqquXH-oGFAxViFmIAHcnKDV4QMygAegQIARB1" },
-    { id: 2, title: "The Dark Knight", image: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fm.media-amazon.com%2Fimages%2FS%2Fpv-target-images%2Fe9a43e647b2ca70e75a3c0af046c4dfdcd712380889779cbdc2c57d94ab63902.jpg&tbnid=Dqcse2Q-pOnjCM&vet=12ahUKEwjAtaLX-oGFAxVgJmIAHeSjAHoQMygEegQIARB7..i&imgrefurl=https%3A%2F%2Fwww.amazon.com%2FDark-Knight-Christian-Bale%2Fdp%2FB001I189MQ&docid=UknoXtGbOqhQJM&w=1920&h=2560&q=The%20dark%20knight%20&ved=2ahUKEwjAtaLX-oGFAxVgJmIAHeSjAHoQMygEegQIARB7" },
-    { id: 3, title: "Pulp Fiction", image: "https://example.com/movies/3.jpg" },
-    { id: 4, title: "Schindler's List", image: "https://example.com/movies/4.jpg" },
-    { id: 5, title: "Breaking Bad", image: "https://example.com/shows/0.jpg" },
-    { id: 6, title: "Game of Thrones", image: "https://example.com/shows/1.jpg" },
-    { id: 7, title: "Friends", image: "https://example.com/shows/2.jpg" },
-    { id: 8, title: "Stranger Things", image: "https://example.com/shows/3.jpg" },
-    { id: 9, title: "The Crown", image: "https://example.com/shows/4.jpg" },
+    { id: 0, title: "The Shawshank Redemption", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/shawshank poster.jpeg" },
+    { id: 1, title: "The Godfather", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Godfather image.jpeg" },
+    { id: 2, title: "The Dark Knight", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/TDK.jpeg" },
+    { id: 3, title: "Pulp Fiction", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/pulp Fiction image.jpeg" },
+    { id: 4, title: "Schindler's List", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/ShindlerList.jpeg" },
+    { id: 5, title: "Breaking Bad", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/breaking bad image.jpeg" },
+    { id: 6, title: "Game of Thrones", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Got.jpeg" },
+    { id: 7, title: "Friends", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Friends image.jpeg" },
+    { id: 8, title: "Stranger Things", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/stranger things.jpeg" },
+    { id: 9, title: "The Crown", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/The crown.jpeg" },
+    { id: 10, title: "Inception", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Inception image.jpeg" },
+    { id: 11, title: "Fight Club", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/fight club.jpeg" },
+    { id: 12, title: "One Piece ", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/One piece .jpeg" },
+    { id: 13, title: "Rick and Morty", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Rick and morty.jpeg" },
+    { id: 14, title: "Forrest Gump", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/forrest gump.jpeg" },
+    { id: 15, title: "The Lord of the Rings: The Return of the King", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/LOR Image .jpeg" },
+    { id: 16, title: "The Office", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/The office.jpeg" },
+    { id: 17, title: "Black Mirror", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Black mirror.jpeg" },
 
 ];
+
+const sections = [
+    {
+        title:'Top Rated',
+        data:MediaArray,
+
+    },
+    {
+        title: "Popular This Week",
+        data:MediaArray,
+    },
+    {
+        
+    }
+]
+
+
+
+
+
 export default MediaArray;
+
