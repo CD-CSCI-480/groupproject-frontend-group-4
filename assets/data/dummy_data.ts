@@ -21,20 +21,7 @@ const MediaArray: Media[] = [
 
 ];
 
-const sections = [
-    {
-        title:'Top Rated',
-        data:MediaArray,
 
-    },
-    {
-        title: "Popular This Week",
-        data:MediaArray,
-    },
-    {
-        
-    }
-]
 
 
 

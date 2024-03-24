@@ -1,25 +1,42 @@
 import React from 'react'
-import { View,StyleSheet,FlatList,Text } from 'react-native'
+import { View,StyleSheet,FlatList,Text,SectionList } from 'react-native'
 import MediaArray from '../../assets/data/dummy_data'
 import HomeScreenButton from '../components/HomeScreenButton'
 import MediaListItem from '../components/MediaListItem'
+import SECTIONS from '../../assets/data/sections'
+
 
 const HomePage = ()=> {
     return (
         <View style={styles.container}>
             <HomeScreenButton></HomeScreenButton>
-            <View style={styles.headerContainer}>
-                <Text style={styles.headerText}>Top Rated</Text>
-            </View>
-            <FlatList
-                data={MediaArray}
-                renderItem = {({item})=><MediaListItem media={item} ></MediaListItem>}
-                horizontal
-                />
+            <SectionList
+            sections = {SECTIONS}
+            style={styles.headerContainer}
+            
+
+            renderSectionHeader= {
+                ({section}) => (
+                    <>
+                        <Text style={styles.headerText}>{section.title}  </Text>
+                        <FlatList
+                            data={section.data}
+                            renderItem = {({item})=><MediaListItem media={item} ></MediaListItem>}
+                            horizontal
+                            contentContainerStyle={{gap:30}}
+                        />
+                    </>
+                   
+                )
+            }
+            renderItem= {({item,section})=>{
+            }}
+            />
         </View>
     
     )
 }
+
 
 const styles = StyleSheet.create({
     container : {
@@ -31,15 +48,13 @@ const styles = StyleSheet.create({
         color:"white",
         fontSize:30,
         fontWeight:"bold",
+        
     
     },
     headerContainer : {
         margin:20,
 
     }
-
-    
-
 })
 
 

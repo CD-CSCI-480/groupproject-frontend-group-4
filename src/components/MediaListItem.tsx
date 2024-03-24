@@ -8,7 +8,7 @@ const MediaListItem = ({media}:MediaListItemProps)=> {
     return (
         <View style={stlyes.container}>
             <Image source={{uri:media.image}} style={stlyes.image}/>
-            <Text style={stlyes.title}>{media.title}</Text>
+            <Text style={stlyes.title} numberOfLines={1} ellipsizeMode="tail">{media.title} </Text>
         </View>
     )
 }
@@ -16,6 +16,7 @@ const MediaListItem = ({media}:MediaListItemProps)=> {
 const stlyes = StyleSheet.create({
     container: {
         alignItems:'center',
+        
     },
     image: {
         width:115,
@@ -27,7 +28,10 @@ const stlyes = StyleSheet.create({
         fontSize: 12,
         fontWeight: '600',
         marginVertical: 10,
-        color:"white"
+        color:"white",
+        flex:1,
+        width:100
+        
         
 
     }
