@@ -14,7 +14,7 @@ const NavBar: React.FC = () => {
       <TouchableOpacity onPress={() => navigation.navigate('Search')}>
         <Ionicons name="search" size={24} color="white" />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('ProfilePage')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
         <Ionicons name="person" size={24} color="white" />
       </TouchableOpacity>
     </View>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
     height: 50,
-    backgroundColor: '#fc6a03',
+    backgroundColor: '##2F2F2F',
     borderColor: 'grey',
     borderWidth: 1,
     borderRadius: 10,
