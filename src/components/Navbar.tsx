@@ -1,29 +1,40 @@
 import React from 'react';
-import { View, Button } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 const NavBar: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
-    <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-      <Button
-        title="Home"
-        onPress={() => {
-          console.log('Home button pressed');
-        }}
-      />
-      <Button
-        title="Search"
-        onPress={() => {
-          console.log('Search button pressed');
-        }}
-      />
-      <Button
-        title="Profile"
-        onPress={() => {
-          console.log('Profile button pressed');
-        }}
-      />
+    <View style={styles.navBar}>
+      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <Ionicons name="home" size={24} color="white" />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+        <Ionicons name="search" size={24} color="white" />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+        <Ionicons name="person" size={24} color="white" />
+      </TouchableOpacity>
     </View>
   );
 };
 
+const styles = StyleSheet.create({
+  navBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: 50,
+    backgroundColor: '#fc6a03',
+    borderColor: 'grey',
+    borderWidth: 1,
+    borderRadius: 10,
+    margin: 20,
+    padding: 10,
+  },
+});
+
 export default NavBar;
+
