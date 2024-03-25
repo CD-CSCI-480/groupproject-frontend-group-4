@@ -14,7 +14,7 @@ const NavBar: React.FC = () => {
       <TouchableOpacity onPress={() => navigation.navigate('Search')}>
         <Ionicons name="search" size={24} color="white" />
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+      <TouchableOpacity onPress={() => navigation.navigate('ProfilePage')}>
         <Ionicons name="person" size={24} color="white" />
       </TouchableOpacity>
     </View>
