@@ -3,6 +3,7 @@
     "name": "frontend-app",
     "slug": "frontend-app",
     "version": "1.0.0",
+    "scheme":"frontend-app",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -17,6 +18,7 @@
     "ios": {
       "supportsTablet": true
     },
+
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
