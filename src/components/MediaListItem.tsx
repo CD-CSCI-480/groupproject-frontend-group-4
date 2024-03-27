@@ -1,4 +1,5 @@
-import { Text, View,StyleSheet,Image } from 'react-native';
+import { Text, View,StyleSheet,Image, Pressable } from 'react-native';
+import { Link } from 'expo-router';
 import { Media } from '../types';
 type MediaListItemProps = {
     media:Media
@@ -6,11 +7,13 @@ type MediaListItemProps = {
 
 const MediaListItem = ({media}:MediaListItemProps)=> {
     return (
-        <View style={stlyes.container}>
-            <Image source={{uri:media.image}} style={stlyes.image}/>
-            <Text style={stlyes.title} numberOfLines={1} ellipsizeMode="tail">{media.title} </Text>
-            <Text style={stlyes.ratingText}>{media.rating}</Text>
-        </View>
+        <Link href={`${media.id}`} asChild>
+            <Pressable style={stlyes.container}>
+                <Image source={{uri:media.image}} style={stlyes.image}/>
+                <Text style={stlyes.title} numberOfLines={1} ellipsizeMode="tail">{media.title} </Text>
+                <Text style={stlyes.ratingText}>{media.rating}</Text>
+            </Pressable>
+        </Link>
     )
 }
 
