@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons, Ionicons} from '@expo/vector-icons';
 import { useNavigation } from 'expo-router';
+import NavBar from '../components/Navbar';
 
 
 const AccountSettingsScreen: React.FC = () => {
@@ -12,32 +13,33 @@ const AccountSettingsScreen: React.FC = () => {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back-circle" size={30} color="black" />
         </TouchableOpacity>
-          <MaterialCommunityIcons name="account-circle" size={50} color="black" />
-          <MaterialCommunityIcons name="cogs" size={50} color="black" />
+        </View>
+        <View style={styles.settingsIcon}>
+        <MaterialCommunityIcons name="cogs" size={70} color="black"/>
         </View>
         <View style={styles.box}>
           <TouchableOpacity style={styles.button}>
-            <MaterialCommunityIcons name="email" size={30} color="black" />
+            <MaterialCommunityIcons name="email" size={30} color="white"/>
             <Text style={styles.text}>Email</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <MaterialCommunityIcons name="shield" size={30} color="black" />
+            <MaterialCommunityIcons name="shield" size={30} color="white" />
             <Text style={styles.text}>Security and Privacy</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <MaterialCommunityIcons name="lock" size={30} color="black" />
+            <MaterialCommunityIcons name="lock" size={30} color="white" />
             <Text style={styles.text}>Change Password</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <MaterialCommunityIcons name="tools" size={30} color="black" />
+            <MaterialCommunityIcons name="tools" size={30} color="white" />
             <Text style={styles.text}>Accessibility</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <MaterialCommunityIcons name="card-account-details" size={30} color="black" />
+            <MaterialCommunityIcons name="card-account-details" size={30} color="white" />
             <Text style={styles.text}>Personal Details</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.button}>
-            <MaterialCommunityIcons name="delete" size={30} color="black" />
+            <MaterialCommunityIcons name="delete" size={30} color="white" />
             <Text style={styles.text}>Delete Account</Text>
           </TouchableOpacity>
         </View>
@@ -49,34 +51,37 @@ const AccountSettingsScreen: React.FC = () => {
     container: {
       flex: 1,
       backgroundColor: 'grey',
-      alignItems: 'center',
-      justifyContent: 'center',
     },
     header: {
       flexDirection: 'row',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      marginBottom: 20,
+      padding: 25,
     },
     settings: {
       width: '80%',
     },
+    settingsIcon: {
+      alignSelf: 'center',
+    },
     box: {
       flex: 1,
       backgroundColor: '#2F2F2F',
-      borderRadius: 10,
+      borderRadius: 25,
       margin: 10,
-      padding: 10,
+      padding: 25,
     },
     button: {
       flexDirection: 'row',
       alignItems: 'center',
       padding: 10,
-      borderBottomWidth: 1,
-      borderBottomColor: '#ddd',
+      borderBottomWidth: 10,
+      borderBottomColor: '#2F2F2F',
     },
     text: {
       marginLeft: 10,
       fontSize: 18,
+      color: 'white'
     },
   });
 
