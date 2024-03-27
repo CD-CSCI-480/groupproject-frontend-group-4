@@ -8,7 +8,7 @@ const NavBar: React.FC = () => {
 
   return (
     <View style={styles.navBar}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity onPress={() => navigation.navigate('index')}>
         <Ionicons name="home" size={24} color="white" />
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Search')}>
