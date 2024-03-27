@@ -3,7 +3,7 @@ import { View,StyleSheet,Text } from 'react-native'
 import HomeScreenButton from '../components/HomeScreenButton'
 import MediaList from '../components/MediaList'
 import NavBar from '../components/Navbar'
-import { Link } from 'expo-router'
+
 
 const HomePage = ()=> {
     return (
@@ -20,7 +20,7 @@ const HomePage = ()=> {
 
 const styles = StyleSheet.create({
     container : {
-        flex:1,
+        flex:2,
         backgroundColor:"grey"
     },
 
