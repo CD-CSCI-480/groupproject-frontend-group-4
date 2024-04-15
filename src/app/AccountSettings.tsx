@@ -43,6 +43,7 @@ const AccountSettingsScreen: React.FC = () => {
             <Text style={styles.text}>Delete Account</Text>
           </TouchableOpacity>
         </View>
+        <NavBar></NavBar>
       </View>
     );
   }
