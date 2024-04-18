@@ -1,5 +1,5 @@
 import { View,StyleSheet,FlatList,Text,SectionList } from 'react-native'
-import MediaListItem from '../components/MediaListItem'
+import MediaListItem from './MediaListItem'
 import SECTIONS from '../../assets/data/sections'
 
 const MediaList = ()=> {

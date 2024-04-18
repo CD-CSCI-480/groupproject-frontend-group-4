@@ -1,19 +1,21 @@
-import { Text, View,StyleSheet,Image, Pressable } from 'react-native';
-import { Link } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
+import { Text,StyleSheet,Image, Pressable,} from 'react-native';
 import { Media } from '../types';
+
 type MediaListItemProps = {
     media:Media
 }
 
-const MediaListItem = ({media}:MediaListItemProps)=> {
+const MediaListItem = ({media}:MediaListItemProps) => {
+    const navigation =useNavigation()
     return (
-        <Link href={`${media.id}`} asChild>
-            <Pressable style={stlyes.container}>
+            <Pressable style={stlyes.container} onPress={()=>navigation.navigate("MediaDetails",{selectedMedia:media})}>
                 <Image source={{uri:media.image}} style={stlyes.image}/>
                 <Text style={stlyes.title} numberOfLines={1} ellipsizeMode="tail">{media.title} </Text>
                 <Text style={stlyes.ratingText}>{media.rating}</Text>
             </Pressable>
-        </Link>
+        
+        
     )
 }
 

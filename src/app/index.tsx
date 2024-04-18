@@ -1,28 +1,20 @@
-import React from 'react'
-import { View,StyleSheet,Text } from 'react-native'
-import HomeScreenButton from '../components/HomeScreenButton'
-import MediaList from '../components/MediaList'
-import NavBar from '../components/Navbar'
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import HomePage from "./home";
+import ProfilePage from "./Profile";
+import { View } from "react-native";
 
-
-const HomePage = ()=> {
-    return (
-        <View style={styles.container}>
-            <HomeScreenButton></HomeScreenButton>
-            <MediaList></MediaList>
-            <NavBar></NavBar>
-        </View>
-    
-    )
+const Tab = createBottomTabNavigator();
+const startPage = () => {
+    return(
+         <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Home" component={HomePage}/>
+                <Tab.Screen name="Profile" component={ProfilePage}/>
+            </Tab.Navigator>
+         </NavigationContainer>
+         
+         )
 }
 
-
-
-const styles = StyleSheet.create({
-    container : {
-        flex:2,
-        backgroundColor:"grey"
-    },
-
-})
-export default HomePage;
+export default startPage;
