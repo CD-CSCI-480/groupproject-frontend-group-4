@@ -27,18 +27,13 @@ const ProfilePage: React.FC = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Ionicons name="arrow-back-circle" size={30} color="black" />
-        </TouchableOpacity>
+        <View style={styles.profileImageContainer}>
         <Image source={{ uri: 'https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png' }} style={styles.profileImage} />
-        <TouchableOpacity onPress={() => navigation.navigate('AccountSettings')}>
+        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('AccountSettings',)}>
           <MaterialIcons name="settings" size={30} color="black" />
         </TouchableOpacity>
-      </View>
-      <Text style={styles.creationDate}>Account created on: {new Date().toLocaleDateString()}</Text>
-      <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
-        <Text style={styles.editProfile}>Edit Profile</Text>
-      </TouchableOpacity>
+      </View>    
       <MediaList sectionProp={sections} screenProp="MediaDetails"></MediaList>
     </View>
   );
@@ -61,6 +56,12 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 25,
+  },
+  profileImageContainer: {
+    flex:1,
+    alignItems:"center",
+    justifyContent: 'center',
+    paddingLeft:30
   },
   creationDate: {
     fontSize: 12,

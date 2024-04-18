@@ -5,7 +5,7 @@ import HomePage from './src/app/home';
 import ProfilePage from './src/app/Profile';
 import MediaDetailsScreen from './src/app/MediaDetails';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import AccountSettingsScreen from "./src/app/AccountSettings";
 
 
 const HomeStack = createNativeStackNavigator();
@@ -65,7 +65,8 @@ const ProfileScreenStack = ()=> {
         title:"Details"
       }}
     />
-  </ProfileStack.Navigator>
+    
+    </ProfileStack.Navigator>
   )
 
 }
