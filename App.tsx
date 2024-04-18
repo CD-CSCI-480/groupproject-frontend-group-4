@@ -23,8 +23,49 @@ const HomeScreenStack = ()=> {
           color:"white"
         }
       }} />
-      <HomeStack.Screen name ="MediaDetails" component={MediaDetailsScreen}/>
+      <HomeStack.Screen name ="MediaDetails" component={MediaDetailsScreen} options={{
+        headerStyle:{
+          backgroundColor:"#2F2F2F",
+          
+        },
+        headerTitleStyle:{
+          color:"white"
+        },
+        title:"Details"
+      }}
+      
+      />
     </HomeStack.Navigator>
+  )
+
+}
+
+const ProfileStack =createNativeStackNavigator();
+const ProfileScreenStack = ()=> {
+  return (
+  <ProfileStack.Navigator>
+    <ProfileStack.Screen name="Profile" component={ProfilePage} options={{
+        headerStyle:{
+          backgroundColor:"#2F2F2F",
+          
+        },
+        headerTitleStyle:{
+          color:"white"
+        }
+      }}
+    />
+    <ProfileStack.Screen name ="MediaDetails" component={MediaDetailsScreen} options={{
+        headerStyle:{
+          backgroundColor:"#2F2F2F",
+          
+        },
+        headerTitleStyle:{
+          color:"white"
+        },
+        title:"Details"
+      }}
+    />
+  </ProfileStack.Navigator>
   )
 
 }
@@ -36,10 +77,10 @@ export default function App() {
         
         tabBarStyle:{
           backgroundColor:"#2F2F2F",
-        
         },
         tabBarActiveTintColor:"#EE731B"
       }} >
+
           <Tab.Screen name='HomeStack' component={HomeScreenStack} options={{
             headerShown:false,
             tabBarIcon: ({ color, size }) => (
@@ -48,7 +89,8 @@ export default function App() {
   
 
              }}/>
-          <Tab.Screen name='Profile' component={ProfilePage} options={{
+          <Tab.Screen name='ProfileStack' component={ProfileScreenStack} options={{
+            headerShown:false,
             tabBarIcon: ({ color, size }) => (
               <MaterialCommunityIcons name="account" color={color} size={size} />
           

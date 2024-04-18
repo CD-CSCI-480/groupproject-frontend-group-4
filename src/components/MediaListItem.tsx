@@ -10,10 +10,10 @@ type RootStackParamList = {
     // Add other screens here
    };
 
-const MediaListItem = ({media}:MediaListItemProps) => {
+const MediaListItem = ({media,screenProp}) => {
     const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
     return (
-            <Pressable style={stlyes.container} onPress={()=>navigation.navigate("MediaDetails",{selectedMedia:media})}>
+            <Pressable style={stlyes.container} onPress={()=>navigation.navigate(screenProp,{selectedMedia:media})}>
                 <Image source={{uri:media.image}} style={stlyes.image}/>
                 <Text style={stlyes.title} numberOfLines={1} ellipsizeMode="tail">{media.title} </Text>
                 <Text style={stlyes.ratingText}>{media.rating}</Text>

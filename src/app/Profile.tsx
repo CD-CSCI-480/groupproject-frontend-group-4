@@ -2,8 +2,25 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import NavBar from '../components/Navbar';
+import MediaList from '../components/MediaList';
+import MediaArray from '../../assets/data/dummy_data';
+const sections= [
+  {
+    title:'My favorites',
+    data:MediaArray
+  },
+  {
+    title:'My List',
+    data:MediaArray
+  },
+  {
+    title:"Recently Viewed",
+    data:MediaArray
+  },
 
+
+
+]
 const ProfilePage: React.FC = () => {
   const navigation = useNavigation();
 
@@ -22,18 +39,7 @@ const ProfilePage: React.FC = () => {
       <TouchableOpacity onPress={() => navigation.navigate('EditProfile')}>
         <Text style={styles.editProfile}>Edit Profile</Text>
       </TouchableOpacity>
-      <View style={styles.box}>
-        <Text style={styles.rowTitle}>My Favorites</Text>
-      </View>
-      <View style={styles.box}>
-        <Text style={styles.rowTitle}>My List</Text>
-        {}
-      </View>
-      <View style={styles.box}>
-        <Text style={styles.rowTitle}>Recently Viewed</Text>
-        {}
-      </View>
-      <NavBar></NavBar>
+      <MediaList sectionProp={sections} screenProp="MediaDetails"></MediaList>
     </View>
   );
 };
