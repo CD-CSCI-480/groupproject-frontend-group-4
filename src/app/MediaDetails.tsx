@@ -7,8 +7,9 @@ type MediaDetailsScreenParams = {
   type MediaDetailsScreenProps = NativeStackScreenProps<MediaDetailsScreenParams,"media"
 >;
 
-const MediaDetailsScreen = ({route}:MediaDetailsScreenProps)=> {
-    const item = route.params;
+const MediaDetailsScreen = ({route})=> {
+    const item = route.params.selectedMedia;
+    console.log(item)
     return(
         <View>
             <Text>

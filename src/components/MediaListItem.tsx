@@ -1,13 +1,17 @@
 import { useNavigation } from '@react-navigation/native';
 import { Text,StyleSheet,Image, Pressable,} from 'react-native';
 import { Media } from '../types';
-
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 type MediaListItemProps = {
     media:Media
 }
+type RootStackParamList = {
+    MediaDetails: { selectedMedia: Media };
+    // Add other screens here
+   };
 
 const MediaListItem = ({media}:MediaListItemProps) => {
-    const navigation =useNavigation()
+    const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>();
     return (
             <Pressable style={stlyes.container} onPress={()=>navigation.navigate("MediaDetails",{selectedMedia:media})}>
                 <Image source={{uri:media.image}} style={stlyes.image}/>
