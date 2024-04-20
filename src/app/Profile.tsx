@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import NavBar from '../components/Navbar';
 
+
+
 const ProfilePage: React.FC = () => {
   const navigation = useNavigation();
 
