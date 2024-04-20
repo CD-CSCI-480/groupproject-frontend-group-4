@@ -1,18 +1,18 @@
 import { View,StyleSheet,FlatList,Text,SectionList } from 'react-native'
-import MediaListItem from '../components/MediaListItem'
+import MediaListItem from './MediaListItem'
 import SECTIONS from '../../assets/data/sections'
 
-const MediaList = ()=> {
+const MediaList = ({sectionProp,screenProp})=> {
     return (
     <SectionList
-            sections = {SECTIONS}
+            sections = {sectionProp}
             renderSectionHeader= {
                 ({section}) => (
                     <>
                         <Text style={styles.headerText}>{section.title}  </Text>
                         <FlatList
                             data={section.data}
-                            renderItem = {({item})=><MediaListItem media={item} ></MediaListItem>}
+                            renderItem = {({item})=><MediaListItem media={item} screenProp={screenProp} ></MediaListItem>}
                             horizontal
                             contentContainerStyle={{gap:30}}
                         />

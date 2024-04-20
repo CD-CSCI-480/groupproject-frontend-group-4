@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { MaterialCommunityIcons, Ionicons} from '@expo/vector-icons';
 import { useNavigation } from 'expo-router';
-import NavBar from '../components/Navbar';
 
 
 const AccountSettingsScreen: React.FC = () => {

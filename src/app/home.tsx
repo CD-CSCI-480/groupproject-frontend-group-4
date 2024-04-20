@@ -1,16 +1,14 @@
 import React from 'react'
-import { View,StyleSheet,Text } from 'react-native'
+import { View,StyleSheet } from 'react-native'
 import HomeScreenButton from '../components/HomeScreenButton'
 import MediaList from '../components/MediaList'
-import NavBar from '../components/Navbar'
-
+import SECTIONS from '../../assets/data/sections'
 
 const HomePage = ()=> {
     return (
         <View style={styles.container}>
             <HomeScreenButton></HomeScreenButton>
-            <MediaList></MediaList>
-            <NavBar></NavBar>
+            <MediaList sectionProp={SECTIONS} screenProp={"MediaDetails"} ></MediaList>
         </View>
     
     )
