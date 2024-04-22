@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet,TextInput,View,TouchableOpacity,Text,Alert,Button} from 'react-native'
 import { useState } from 'react';
-import SubmitButton from '../components/SubmitInput';
+import SubmitButton from '../components/SubmitButton';
 
 function SignUp() {
     const [email, setEmail] = useState('');

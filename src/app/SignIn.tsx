@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet, Alert,TouchableOpacity, Pressable } from 'react-native';
-import SubmitButton from '../components/SubmitInput';
+import SubmitButton from '../components/SubmitButton';
 const Login = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');

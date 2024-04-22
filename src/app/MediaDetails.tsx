@@ -1,7 +1,11 @@
-import { View,Text,Image,StyleSheet } from "react-native/";
+import { View,Text,Image,StyleSheet,Modal,Pressable } from "react-native/";
+import SubmitButton from "../components/SubmitButton";
+import AddRating from "../components/addRating";
 
+import { useState } from "react";
 const MediaDetailsScreen = ({route})=> {
     const item = route.params.selectedMedia;
+    const [modalVisible,setModalVisible] = useState(false);
     return(
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -12,9 +16,16 @@ const MediaDetailsScreen = ({route})=> {
                 <Text style={styles.text}> {item.rating}</Text>
                 <Text style={styles.text}> {item.genre}</Text>
                 <Text style={styles.text}> {item.type}</Text>
-            </View>
-            
+                <SubmitButton
+            text={"rate"}
+            onPress={()=>setModalVisible(true)}
+            ></SubmitButton>
+            <AddRating
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            ></AddRating>
         </View>
+    </View>
     )
 }
 
@@ -41,6 +52,7 @@ const styles = StyleSheet.create({
     textContainer: {
         flex:1,
         alignItems:"center",
+        justifyContent:"center"
         
     },
     text:{
@@ -48,7 +60,15 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
         color:"white",
         
-    }
+    },
+    modalView: {
+        margin: 20,
+        borderRadius: 20,
+        padding: 35,
+        alignItems: 'center',
+        justifyContent:"center",        
+        
+      },
 })
 
 export default MediaDetailsScreen;
