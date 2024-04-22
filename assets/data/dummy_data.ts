@@ -1,4 +1,5 @@
 import { Media } from "../../src/types";
+
 const MediaArray: Media[] = [
     { id: 0, title: "The Shawshank Redemption", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/shawshank poster.jpeg",rating:9.5 },
     { id: 1, title: "The Godfather", image: "/Users/diboyce21students.desu.edu/dev/software-ein/frontend-app/assets/mediaImages/Godfather image.jpeg",rating:9.3 },

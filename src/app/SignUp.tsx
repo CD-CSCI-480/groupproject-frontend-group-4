@@ -1,26 +1,30 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet, Alert,TouchableOpacity, Pressable } from 'react-native';
+import React from 'react'
+import { StyleSheet,TextInput,View,TouchableOpacity,Text,Alert,Button} from 'react-native'
+import { useState } from 'react';
 import SubmitButton from '../components/SubmitInput';
-const Login = ({navigation}) => {
+
+function SignUp({navigation}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [firstName,setFirstName] = useState('');
+    const [lastName,setLasttName] = useState('');
+
     
     
     const handleLogin = async () => {
         try {
-            const response = await fetch('http://localhost:8080/api/users/login', {
+            const response = await fetch('http://localhost:8080/api/users', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ email, password })
+                body: JSON.stringify({ email, password,firstName,lastName})
             });
 
             if (response.ok) {
                 const userDTO = await response.json();
-                Alert.alert("Login Success", "You are logged in!");
-                navigation.navigate("AppNavigator",{screen:"HomeStack"})
+                Alert.alert("You successfully created an account");
+                
                 // Handle navigation or state update as needed
             } else {
                 const errorMsg = await response.text();
@@ -31,9 +35,10 @@ const Login = ({navigation}) => {
             Alert.alert("Network Error", "An error occurred while trying to log in.");
         }
     };
+  return (
+    
 
-    return (
-        <View style={styles.container}>
+    <View style={styles.container}>
             <TextInput
                 style={styles.input}
                 placeholder="Email"
@@ -45,20 +50,35 @@ const Login = ({navigation}) => {
             />
             <TextInput
                 style={styles.input}
+                placeholder="FirstName"
+                placeholderTextColor={"white"}
+                value={firstName}
+                onChangeText={setFirstName}
+                autoCapitalize="none"
+                
+            />
+            <TextInput
+                style={styles.input}
+                placeholder="LastName"
+                placeholderTextColor={"white"}
+                value={lastName}
+                onChangeText={setLasttName}
+                autoCapitalize="none"
+                
+            />
+            <TextInput
+                style={styles.input}
                 placeholder="Password"
                 placeholderTextColor={"white"}
                 value={password}
                 onChangeText={setPassword}
-                secureTextEntry
             />
-            
-            <SubmitButton onPress={handleLogin} text={"Login"}></SubmitButton>
-            <SubmitButton onPress={()=>navigation.navigate("SignUp")} text={"Create an Account"}></SubmitButton>
+            <SubmitButton onPress={handleLogin} text={"Create"}></SubmitButton>
+
 
         </View>
-    );
-};
-
+  )
+}
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -72,18 +92,11 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         padding: 15,
         borderWidth: 1,
-        borderColor: "#EE731B",
+        borderColor: '#ddd',
         borderRadius: 5,
         backgroundColor:"#2F2F2F",
         color:"white"
     },
-    textStyle:{
-      color:"white",fontWeight:"bold",fontSize:18
-    }
 });
 
-export default Login;
-
-
-
-
+export default SignUp

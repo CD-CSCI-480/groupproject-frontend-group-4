@@ -4,7 +4,9 @@ import HomeScreenButton from '../components/HomeScreenButton'
 import MediaList from '../components/MediaList'
 import SECTIONS from '../../assets/data/sections'
 
-const HomePage = ()=> {
+
+
+const HomePage = ({route})=> {
     return (
         <View style={styles.container}>
             <HomeScreenButton></HomeScreenButton>
