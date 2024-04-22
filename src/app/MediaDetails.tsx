@@ -1,7 +1,4 @@
 import { View,Text,Image,StyleSheet } from "react-native/";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Media } from "../types";
-
 
 const MediaDetailsScreen = ({route})=> {
     const item = route.params.selectedMedia;
@@ -13,6 +10,8 @@ const MediaDetailsScreen = ({route})=> {
             <View style={styles.textContainer}>
                 <Text style={styles.text}> {item.title}</Text>
                 <Text style={styles.text}> {item.rating}</Text>
+                <Text style={styles.text}> {item.genre}</Text>
+                <Text style={styles.text}> {item.type}</Text>
             </View>
             
         </View>
