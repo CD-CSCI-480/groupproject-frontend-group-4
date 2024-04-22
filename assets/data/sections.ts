@@ -7,19 +7,19 @@ const SECTIONS = [
 
     },
     {
-        title: "Popular This Week",
+        title: "Sci-Fi",
         data:MediaArray,
     },
     {
-        title:"Upcoming",
+        title:"ACTION",
         data:MediaArray
     },
     {
-        title : "Top Picks",
+        title : "ADVENTURE",
         data: MediaArray
     },
     {
-        title:"Your favorites",
+        title:"HORROR",
         data:MediaArray
     }
 

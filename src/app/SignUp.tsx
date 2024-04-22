@@ -3,7 +3,7 @@ import { StyleSheet,TextInput,View,TouchableOpacity,Text,Alert,Button} from 'rea
 import { useState } from 'react';
 import SubmitButton from '../components/SubmitInput';
 
-function SignUp({navigation}) {
+function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [firstName,setFirstName] = useState('');
