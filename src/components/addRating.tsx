@@ -8,7 +8,6 @@ import axios from "axios";
 function AddRating({modalVisible,setModalVisible,mediaId,}) {
     const [rating,setRating] = useState('');
     const {user} = useUser();
-    console.log(user);
     const rate = async(mediaId,value) => {
       
       try{
