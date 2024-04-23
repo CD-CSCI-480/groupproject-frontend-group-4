@@ -23,6 +23,8 @@ function AddRating({modalVisible,setModalVisible,mediaId,}) {
       }
       
     }
+    
+
   return (
     <View
         style={styles.modalView}>
@@ -52,7 +54,7 @@ function AddRating({modalVisible,setModalVisible,mediaId,}) {
                     onPress={()=>setModalVisible(false)}
                     text="Close"
                     ></SubmitButton>
-                            
+                       
             </View>
                     
         </Modal>

@@ -1,11 +1,23 @@
 import { View,Text,Image,StyleSheet,Modal,Pressable } from "react-native/";
 import SubmitButton from "../components/SubmitButton";
 import AddRating from "../components/addRating";
-
+import axios from "axios";
 import { useState } from "react";
+import { useUser } from "../components/UserProvider";
 const MediaDetailsScreen = ({route})=> {
     const item = route.params.selectedMedia;
+    const {user} = useUser();
     const [modalVisible,setModalVisible] = useState(false);
+    const addToWatchlist = async(mediaId)=>{
+        try{
+          const response = await axios.put(`http://localhost:8080/api/users/${user.id}/addToWatch/${mediaId}`)
+          if(response.status == 200) {
+            alert("You added to your list");
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
     return(
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -20,6 +32,10 @@ const MediaDetailsScreen = ({route})=> {
             text={"rate"}
             onPress={()=>setModalVisible(true)}
             ></SubmitButton>
+            <SubmitButton
+                    text={"Add To WatchList"}
+                    onPress={()=>addToWatchlist(item.id)}
+                    ></SubmitButton> 
             <AddRating
             modalVisible={modalVisible}
             setModalVisible={setModalVisible}

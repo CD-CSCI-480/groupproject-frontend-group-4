@@ -4,26 +4,33 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import MediaList from '../components/MediaList';
 import MediaArray from '../../assets/data/dummy_data';
+import { useUser } from '../components/UserProvider';
+import { urlParams,sectonType,initSection } from '../serviceFunctions';
+
+
 const sections= [
-  {
-    title:'My favorites',
-    data:MediaArray
-  },
+  // {
+  //   title:'My favorites',
+  //   data:MediaArray
+  // },
   {
     title:'My List',
     data:MediaArray
   },
-  {
-    title:"Recently Viewed",
-    data:MediaArray
-  },
+  // {
+  //   title:"Recently Viewed",
+  //   data:MediaArray
+  // },
 
 
 
 ]
 const ProfilePage: React.FC = () => {
   const navigation = useNavigation();
-
+  const {user} = useUser();
+  const GET_WATCHLIST_URL:urlParams = {url:`http://localhost:8080/api/users/${user.id}/watchlist`}
+  const URLS:urlParams[] = [GET_WATCHLIST_URL]
+  initSection(sections,URLS)
   return (
     <View style={styles.container}>
       <View style={styles.header}>
