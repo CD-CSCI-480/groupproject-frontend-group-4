@@ -23,6 +23,7 @@ const MediaDetailsScreen = ({route})=> {
             <AddRating
             modalVisible={modalVisible}
             setModalVisible={setModalVisible}
+            mediaId={item.id}
             ></AddRating>
         </View>
     </View>

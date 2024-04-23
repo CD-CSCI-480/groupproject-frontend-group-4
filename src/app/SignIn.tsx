@@ -2,10 +2,11 @@ import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet, Alert,TouchableOpacity, Pressable } from 'react-native';
 import SubmitButton from '../components/SubmitButton';
+import { useUser } from '../components/UserProvider';
 const Login = ({navigation}) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
+    const {setUser} = useUser();
     
     const handleLogin = async () => {
         try {
@@ -19,6 +20,7 @@ const Login = ({navigation}) => {
 
             if (response.ok) {
                 const userDTO = await response.json();
+                setUser(userDTO)
                 Alert.alert("Login Success", "You are logged in!");
                 navigation.navigate("AppNavigator",{screen:"HomeStack"})
                 // Handle navigation or state update as needed

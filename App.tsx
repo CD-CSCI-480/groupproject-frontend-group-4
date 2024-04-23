@@ -3,10 +3,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "./src/app/SignIn";
 import SignUp from "./src/app/SignUp";
 import AppNavigator from "./AppNavigator";
+import { UserProvider } from "./src/components/UserProvider";
 
 const LoginStack = createNativeStackNavigator();
 const EnterStack =  createNativeStackNavigator();
-
 
 const LoginScreenStack = () => {
   return (
@@ -30,6 +30,7 @@ const LoginScreenStack = () => {
 
 export default function App() {
   return(
+    <UserProvider >
     <NavigationContainer >
       <EnterStack.Navigator screenOptions={{
         
@@ -56,6 +57,7 @@ export default function App() {
 
       </EnterStack.Navigator>
     </NavigationContainer>
+    </UserProvider>
   )
 }
 

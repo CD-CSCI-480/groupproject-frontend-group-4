@@ -1,8 +1,5 @@
 import { TextInput,StyleSheet } from "react-native";
 
-import React from 'react'
-
-
 function CustomInput({placeholder,value,keyboardType,onChangeText,}) {
   return (
     <TextInput
