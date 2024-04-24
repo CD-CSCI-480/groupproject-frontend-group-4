@@ -1,10 +1,23 @@
-import { View,Text,Image,StyleSheet } from "react-native/";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { Media } from "../types";
-
-
+import { View,Text,Image,StyleSheet,Modal,Pressable } from "react-native/";
+import SubmitButton from "../components/SubmitButton";
+import AddRating from "../components/addRating";
+import axios from "axios";
+import { useState } from "react";
+import { useUser } from "../components/UserProvider";
 const MediaDetailsScreen = ({route})=> {
     const item = route.params.selectedMedia;
+    const {user} = useUser();
+    const [modalVisible,setModalVisible] = useState(false);
+    const addToWatchlist = async(mediaId)=>{
+        try{
+          const response = await axios.put(`http://localhost:8080/api/users/${user.id}/addToWatch/${mediaId}`)
+          if(response.status == 200) {
+            alert("You added to your list");
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      }
     return(
         <View style={styles.container}>
             <View style={styles.imageContainer}>
@@ -13,9 +26,23 @@ const MediaDetailsScreen = ({route})=> {
             <View style={styles.textContainer}>
                 <Text style={styles.text}> {item.title}</Text>
                 <Text style={styles.text}> {item.rating}</Text>
-            </View>
-            
+                <Text style={styles.text}> {item.genre}</Text>
+                <Text style={styles.text}> {item.type}</Text>
+                <SubmitButton
+            text={"rate"}
+            onPress={()=>setModalVisible(true)}
+            ></SubmitButton>
+            <SubmitButton
+                    text={"Add To WatchList"}
+                    onPress={()=>addToWatchlist(item.id)}
+                    ></SubmitButton> 
+            <AddRating
+            modalVisible={modalVisible}
+            setModalVisible={setModalVisible}
+            mediaId={item.id}
+            ></AddRating>
         </View>
+    </View>
     )
 }
 
@@ -42,6 +69,7 @@ const styles = StyleSheet.create({
     textContainer: {
         flex:1,
         alignItems:"center",
+        justifyContent:"center"
         
     },
     text:{
@@ -49,7 +77,15 @@ const styles = StyleSheet.create({
         fontWeight:"bold",
         color:"white",
         
-    }
+    },
+    modalView: {
+        margin: 20,
+        borderRadius: 20,
+        padding: 35,
+        alignItems: 'center',
+        justifyContent:"center",        
+        
+      },
 })
 
 export default MediaDetailsScreen;
